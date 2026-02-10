@@ -2,32 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Link Shortener + QR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shorty | Link Shortener & QR Generator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="card">
-    <h2>🔗 Link Shortener</h2>
+  <header>
+    <h1>Shorty</h1>
+    <p>Shorten links. Generate QR. Share smarter.</p>
+  </header>
 
-    <input type="url" id="longUrl" placeholder="Paste long URL here" />
-    <button onclick="generate()">Generate</button>
+  <main class="container">
+    <input
+      type="url"
+      id="longUrl"
+      placeholder="Paste your long URL here..."
+      required
+    />
+
+    <button onclick="generateLink()">Generate</button>
 
     <div id="output" class="hidden">
-      <p><b>Short URL:</b></p>
+      <p><strong>Short URL:</strong></p>
       <a id="shortUrl" target="_blank"></a>
 
-      <p><b>QR Code:</b></p>
-      <div id="qrcode"></div>
-
-      <button onclick="downloadQR()">⬇ Download QR</button>
-    </div>
-  </div>
-
-  <!-- QR Code Library -->
-  <script src="https://cdn.jsdelivr.net/npm/qrcodejs/qrcode.min.js"></script>
-  <script src="script.js"></script>
-
-</body>
-</html>
-
+      <div class="qr-box">
+        <img id="qrImage" alt="Shorty QR Cod
