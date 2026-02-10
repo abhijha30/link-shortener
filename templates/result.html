@@ -1,10 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Short URL</title>
+    <title>Short URL & QR</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+        .box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 420px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        img {
+            margin-top: 15px;
+            width: 180px;
+        }
+        a {
+            color: #2563eb;
+            word-break: break-all;
+        }
+    </style>
 </head>
 <body>
-    <h3>Your Short URL:</h3>
-    <a href="{{ short_url }}">{{ short_url }}</a>
+    <div class="box">
+        <h2>✅ Success</h2>
+
+        <p><strong>Short URL:</strong></p>
+        <a href="{{ short_url }}" target="_blank">{{ short_url }}</a>
+
+        <p><strong>QR Code:</strong></p>
+        <img src="{{ qr_code }}" alt="QR Code">
+
+        <br><br>
+        <a href="/">Create another</a>
+    </div>
 </body>
 </html>
+
